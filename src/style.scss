@@ -1,0 +1,257 @@
+:root {
+  --button-height: 65px; 
+  --button-heights: 90px; 
+  --xbutton-w: 96px;
+  --xbutton-h: 48px;
+}
+
+$depth: 6;
+$color: rgb(114, 159, 207);
+$colors: rgb(139, 00, 00);
+$text-color: darken($color, 10%);
+$lighten-on-hover: 7%;
+$button-speed: .06;
+$timing-function: ease-out;
+
+.button {
+  cursor: pointer;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  text-shadow: 0 -2px 0 darken($color, 20%), 0 1px 1px lighten($color, 20%);
+  box-sizing: border-box;
+  font-size: 2em;
+  font-family: Helvetica, Arial, Sans-Serif;
+  text-decoration: none;
+  font-weight: bold;
+  color: $text-color;
+  height: var(--button-height);
+
+  &:visited {
+    color: $text-color;
+  }
+
+  height: var(--button-height);
+  width: var(--button-height);
+  line-height: var(--button-height);
+  display:inline-block;
+  background: rgb(114, 159, 207);
+  border-top:1px solid rgb(114, 159, 207);
+  border-bottom:1px solid rgb(114, 159, 207);
+  top:0;
+  transition:all ($button-speed + s) $timing-function;
+  position:relative;
+}
+
+.button:hover {
+  background: rgb(140, 184, 221);
+}
+
+.button:active {
+  top: $depth+px;
+  text-shadow: 0 -2px 0 darken($color, 0%), 0 1px 1px lighten($color, 20%), 0 0 4px white;
+  color: lighten($color, 45%);
+
+  &:before {
+    top: 0;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, .7), 0 3px 9px rgba(0, 0, 0, .2);
+
+  }
+}
+
+.button:before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  top: ($depth)+px;
+  height: var(--button-height);
+  background: linear-gradient(to top,
+      saturate(darken($color, 40%), 15%) 0%,
+      saturate(darken($color, 25%), 10%) $depth+px);
+  transition: all (($button-speed*1.3) + s) $timing-function;
+  box-shadow:
+    0 1px 0 2px rgba(0, 0, 0, .3),
+    0 5px ($depth*.4+px) rgba(0, 0, 0, .5),
+    0 ($depth*1.8+px) 9px rgba(0, 0, 0, .2);
+}
+
+
+.xbutton {
+  cursor: pointer;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  text-shadow: 0 -2px 0 darken($color, 20%), 0 1px 1px lighten($color, 20%);
+  box-sizing: border-box;
+  font-size: 2em;
+  font-family: Helvetica, Arial, Sans-Serif;
+  text-decoration: none;
+  font-weight: bold;
+  color: $text-color;
+
+  &:visited {
+    color: $text-color;
+  }
+
+  height: var(--xbutton-h);
+  width: var(--xbutton-w);
+  line-height: var(--xbutton-h);
+  display:inline-block;
+  background: rgb(114, 159, 207);
+  border-top:1px solid rgb(114, 159, 207);
+  border-bottom:1px solid rgb(114, 159, 207);
+  top:0;
+  transition:all ($button-speed + s) $timing-function;
+  position:relative;
+}
+
+.xbutton:hover {
+  background: rgb(140, 184, 221);
+}
+
+.xbutton:active {
+  top: $depth+px;
+  text-shadow: 0 -2px 0 darken($color, 0%), 0 1px 1px lighten($color, 20%), 0 0 4px white;
+  color: lighten($color, 45%);
+
+  &:before {
+    top: 0;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, .7), 0 3px 9px rgba(0, 0, 0, .2);
+  }
+}
+
+.xbutton:before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  top: ($depth)+px;
+  height: var(--xbutton-h);
+  width: var(--xbutton-w);
+  background: linear-gradient(to top,
+      saturate(darken($color, 40%), 15%) 0%,
+      saturate(darken($color, 25%), 10%) $depth+px);
+  transition: all (($button-speed*1.3) + s) $timing-function;
+  box-shadow:
+    0 1px 0 2px rgba(0, 0, 0, .3),
+    0 5px ($depth*.4+px) rgba(0, 0, 0, .5),
+    0 ($depth*1.8+px) 9px rgba(0, 0, 0, .2);
+}
+
+.button-3d {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  color: #0a0a0a;
+  text-decoration: none;
+  border: solid 1px #216fc2;
+  background: #649bd6;
+  text-align: center;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-box-shadow: 0px 2px 0px #0a61be;
+  -moz-box-shadow: 0px 2px 0px #0a61be;
+  box-shadow: 0px 1px 0px #0a61be;
+}
+
+.button-3d:active {
+  -webkit-box-shadow: 0px 2px 0px #0a61be;
+  -moz-box-shadow: 0px 2px 0px #0a61be;
+  box-shadow: 0px 2px 0px #0a61be;
+  position: relative;
+  top: 2px;
+}
+
+.button-xd {
+  position: relative;
+  width: 20px;
+  height: 24px;
+  display: inline-block;
+  color: #0a0a0a;
+  text-decoration: none;
+  border: solid 1px #dc143c;
+  background: #dc143c;
+  text-align: center;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-box-shadow: 0px 3px 3px 0px #520c1a;
+  -moz-box-shadow: 0px 3px 3px 0px #520c1a;
+  box-shadow: 0px 3px 3px 0px #520c1a;
+}
+
+.button-xd:active {
+  -webkit-box-shadow: 0px 3px 3px 0px #520c1a;
+  -moz-box-shadow: 0px 3px 3px 0px #520c1a;
+  box-shadow: 0px 3px 3px 0px #520c1a;
+  position: relative;
+  top: 2px;
+}
+
+
+.button-xds {
+  cursor: pointer;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  text-shadow: 0 -2px 0 darken($colors, 20%), 0 1px 1px lighten($colors, 20%);
+  box-sizing: border-box;
+  font-size: 2em;
+  font-family: Helvetica, Arial, Sans-Serif;
+  text-decoration: none;
+  font-weight: bold;
+  color: $text-color;
+  &:visited {
+    color: $text-color;
+  }
+
+  height: var(--button-heights);
+  width: var(--button-heights);
+  line-height: var(--button-heights);
+  display:inline-block;
+  background: #8b0000;
+  border-top:1px solid #8b0000;
+  border-bottom:1px solid #8b0000;
+  top:0;
+  transition:all ($button-speed + s) $timing-function;
+  position:relative;
+}
+
+.button-xds:hover {
+  background: #8b2c2c;
+}
+
+.button-xds:active {
+  top: $depth+px;
+  text-shadow: 0 -2px 0 darken($colors, 0%), 0 1px 1px lighten($colors, 20%), 0 0 4px white;
+  color: lighten($colors, 45%);
+
+  &:before {
+    top: 0;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, .7), 0 3px 9px rgba(0, 0, 0, .2);
+
+  }
+}
+
+.button-xds:before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  top: ($depth)+px;
+  height: var(--button-heights);
+  background: linear-gradient(to top,
+      saturate(darken($colors, 40%), 15%) 0%,
+      saturate(darken($colors, 25%), 10%) $depth+px);
+  transition: all (($button-speed*1.3) + s) $timing-function;
+  box-shadow:
+    0 1px 0 2px rgba(0, 0, 0, .3),
+    0 5px ($depth*.4+px) rgba(0, 0, 0, .5),
+    0 ($depth*1.8+px) 9px rgba(0, 0, 0, .2);
+}
